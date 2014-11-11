@@ -6,10 +6,6 @@ import src.Item;
 
 public class ItemTest {
 
-	@Test
-	public void shouldCreateInstance() {
-		Item i = new Item("Milk", 30);
-	}
 	
 	@Test
 	public void shouldReturnCorrectItem() {
