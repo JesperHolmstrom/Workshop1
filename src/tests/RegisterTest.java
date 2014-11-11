@@ -35,5 +35,18 @@ public class RegisterTest {
 		register.addItem(milk);
 		assertEquals(items, register.getItems());
 	}
+	
+	@Test
+	public void shouldReturnReceipt() {
+		Register register = new Register();
+		Item milk = new Item("Milk", 30);
+		Item eggs = new Item("Eggs", 25);
+		Item candy = new Item("Candy", 10);
+		register.addItem(milk);
+		register.addItem(eggs);
+		register.addItem(candy);
+		assertEquals("Milk 30, Eggs 25, Candy 10, Number items 3, Sum 65", register.returnReceipt());
+	}
+	
 
 }
