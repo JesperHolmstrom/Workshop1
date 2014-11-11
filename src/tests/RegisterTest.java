@@ -16,7 +16,7 @@ public class RegisterTest {
 	}
 	
 	@Test
-	public void shouldAddItem() {
+	public void shouldAddPriceToSum() {
 		Register register = new Register();
 		Item milk = new Item("Milk", 30);
 		register.addItem(milk);
