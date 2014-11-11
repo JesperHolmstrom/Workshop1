@@ -5,7 +5,7 @@ public class Item {
 	private int price;
 	
 	public Item(String product, int price) {
-		if(price < 0){
+		if(price < 0 || product.equals("")){
 			throw new IllegalArgumentException();
 		}
 		
