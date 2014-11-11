@@ -31,7 +31,7 @@ public class Register {
 			sb.append(i.getProduct() + " " + i.getPrice() + ", ");
 		}
 		
-		sb.append("Number items " + items.size());
+		sb.append("Nr of items " + items.size());
 		sb.append(", Sum " + sum);
 		
 		return sb.toString();
