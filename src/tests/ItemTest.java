@@ -14,10 +14,14 @@ public class ItemTest {
 		assertEquals(30, i.getPrice());
 	}
 	
-	@Test(expected =IllegalArgumentException.class)
+	@Test(expected = IllegalArgumentException.class)
 	public void shouldNotReturnItem() {
 		Item i = new Item("Eggs", -3);
-		
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void shouldThrowIllegalArgumentOnString() {
+		Item i = new Item("", 30);
 	}
 	
 
