@@ -5,6 +5,10 @@ public class Item {
 	private int price;
 	
 	public Item(String product, int price) {
+		if(price < 0){
+			throw new IllegalArgumentException();
+		}
+		
 		this.product = product;
 		this.price = price;
 	}
