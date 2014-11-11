@@ -24,7 +24,7 @@ public class Register {
 		return items;
 	}
 	
-	public String returnReceipt(){
+	public String getReceipt(){
 		StringBuilder sb = new StringBuilder();
 		
 		for(Item i : items){
