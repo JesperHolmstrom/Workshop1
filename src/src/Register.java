@@ -11,5 +11,9 @@ public class Register {
 		return sum;
 	}
 	
+	public void addItem(Item i){
+		sum += i.getPrice();
+	}
+	
 
 }
