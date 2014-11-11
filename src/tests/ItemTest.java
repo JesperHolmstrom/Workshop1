@@ -10,5 +10,13 @@ public class ItemTest {
 	public void shouldCreateInstance() {
 		Item i = new Item("Milk", 30);
 	}
+	
+	@Test
+	public void shouldReturnCorrectItem() {
+		Item i = new Item("Milk", 30);
+		assertEquals("Milk", i.getProduct());
+		assertEquals(30, i.getPrice());
+	}
+	
 
 }
