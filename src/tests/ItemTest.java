@@ -18,5 +18,11 @@ public class ItemTest {
 		assertEquals(30, i.getPrice());
 	}
 	
+	@Test(expected =IllegalArgumentException.class)
+	public void shouldNotReturnItem() {
+		Item i = new Item("Eggs", -3);
+		
+	}
+	
 
 }
