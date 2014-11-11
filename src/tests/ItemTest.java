@@ -15,7 +15,7 @@ public class ItemTest {
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void shouldNotReturnItem() {
+	public void shouldThrowIllegalArgumentOnPrice() {
 		Item i = new Item("Eggs", -3);
 	}
 	
