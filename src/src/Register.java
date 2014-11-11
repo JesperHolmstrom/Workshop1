@@ -23,5 +23,18 @@ public class Register {
 	public List<Item> getItems(){
 		return items;
 	}
+	
+	public String returnReceipt(){
+		StringBuilder sb = new StringBuilder();
+		
+		for(Item i : items){
+			sb.append(i.getProduct() + " " + i.getPrice() + ", ");
+		}
+		
+		sb.append("Number items " + items.size());
+		sb.append(", Sum " + sum);
+		
+		return sb.toString();
+	}
 
 }
