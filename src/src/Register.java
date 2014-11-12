@@ -1,5 +1,6 @@
 package src;
 
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,6 +36,12 @@ public class Register {
 		sb.append(", Sum " + sum);
 		
 		return sb.toString();
+	}
+
+	public void printReceipt(String receipt, PrintStream printStream) {
+		Printer p = new Printer();
+		p.print(receipt, printStream);
+		
 	}
 
 }
