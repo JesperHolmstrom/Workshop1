@@ -40,18 +40,20 @@ public class RegisterTest {
 	
 	@Test
 	public void shouldReturnReceipt() {
-		Register register = new Register();
-		Item milk = new Item("Milk", 30);
-		Item eggs = new Item("Eggs", 25);
-		Item candy = new Item("Candy", 10);
-		register.addItem(milk);
-		register.addItem(eggs);
-		register.addItem(candy);
+		Register register = setupRegister();
 		assertEquals("Milk 30, Eggs 25, Candy 10, Nr of items 3, Sum 65", register.getReceipt());
 	}
 	
 	@Test
 	public void shouldPrintReceipt(){
+		Register register = setupRegister();
+		String receipt = register.getReceipt();
+		PrintStream printStream = Mockito.mock(PrintStream.class);
+		register.printReceipt(receipt, printStream);
+		Mockito.verify(printStream).println(receipt);
+	}
+	
+	public Register setupRegister(){
 		Register register = new Register();
 		Item milk = new Item("Milk", 30);
 		Item eggs = new Item("Eggs", 25);
@@ -59,10 +61,7 @@ public class RegisterTest {
 		register.addItem(milk);
 		register.addItem(eggs);
 		register.addItem(candy);
-		String receipt = register.getReceipt();
-		PrintStream printStream = Mockito.mock(PrintStream.class);
-		register.printReceipt(receipt, printStream);
-		Mockito.verify(printStream).println(receipt);
+		return register;
 	}
 
 }
