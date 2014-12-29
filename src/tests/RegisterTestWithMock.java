@@ -68,4 +68,12 @@ public class RegisterTestWithMock {
 		Mockito.verify(candy).getProduct();
 	}
 	
+	@Test
+	public void shouldPrintReceipt(){
+		Register register = new Register();
+		PrintStream printStream = Mockito.mock(PrintStream.class);
+		String receipt = "";
+		register.printReceipt(receipt, printStream);
+		Mockito.verify(printStream).println("Milk 30, Eggs 25, Candy 10, Nr of items 3, Sum 65");
+	}
 }
