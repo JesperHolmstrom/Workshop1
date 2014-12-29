@@ -71,8 +71,25 @@ public class RegisterTestWithMock {
 	@Test
 	public void shouldPrintReceipt(){
 		Register register = new Register();
+		Item milk = Mockito.mock(Item.class);
+		Mockito.when(milk.getPrice()).thenReturn(30);
+		Mockito.when(milk.getProduct()).thenReturn("Milk");
+		
+
+		Item eggs = Mockito.mock(Item.class);
+		Mockito.when(eggs.getPrice()).thenReturn(25);
+		Mockito.when(eggs.getProduct()).thenReturn("Eggs");
+		
+
+		Item candy = Mockito.mock(Item.class);
+		Mockito.when(candy.getPrice()).thenReturn(10);
+		Mockito.when(candy.getProduct()).thenReturn("Candy");
+		
+		register.addItem(milk);
+		register.addItem(eggs);
+		register.addItem(candy);
 		PrintStream printStream = Mockito.mock(PrintStream.class);
-		String receipt = "";
+		String receipt = register.getReceipt();
 		register.printReceipt(receipt, printStream);
 		Mockito.verify(printStream).println("Milk 30, Eggs 25, Candy 10, Nr of items 3, Sum 65");
 	}
