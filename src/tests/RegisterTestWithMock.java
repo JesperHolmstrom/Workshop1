@@ -35,6 +35,7 @@ public class RegisterTestWithMock {
 		Register register = new Register();
 		List<Item> items = new ArrayList<Item>();
 		Item milk = Mockito.mock(Item.class);
+		items.add(milk);
 		register.addItem(milk);
 		assertEquals(items, register.getItems());
 	}
