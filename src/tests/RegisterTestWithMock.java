@@ -30,5 +30,14 @@ public class RegisterTestWithMock {
 		assertEquals(30, register.getSum());
 	}
 	
+	@Test
+	public void shouldAddItemToRegister() {
+		Register register = new Register();
+		List<Item> items = new ArrayList<Item>();
+		Item milk = Mockito.mock(Item.class);
+		register.addItem(milk);
+		assertEquals(items, register.getItems());
+	}
+	
 	
 }
