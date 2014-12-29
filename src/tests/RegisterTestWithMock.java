@@ -24,7 +24,9 @@ public class RegisterTestWithMock {
 	public void shouldAddPriceToSum() {
 		Register register = new Register();
 		Item milk = Mockito.mock(Item.class);
+		Mockito.when(milk.getPrice()).thenReturn(30);
 		register.addItem(milk);
+		Mockito.verify(milk).getPrice();
 		assertEquals(30, register.getSum());
 	}
 	
