@@ -62,6 +62,10 @@ public class RegisterTestWithMock {
 		register.addItem(candy);
 		
 		assertEquals("Milk 30, Eggs 25, Candy 10, Nr of items 3, Sum 65", register.getReceipt());
+
+		Mockito.verify(milk).getProduct();
+		Mockito.verify(eggs).getProduct();
+		Mockito.verify(candy).getProduct();
 	}
 	
 }
