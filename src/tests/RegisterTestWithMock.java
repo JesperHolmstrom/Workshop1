@@ -40,5 +40,10 @@ public class RegisterTestWithMock {
 		assertEquals(items, register.getItems());
 	}
 	
+	@Test
+	public void shouldReturnReceipt() {
+		Register register = new Register();
+		assertEquals("Milk 30, Eggs 25, Candy 10, Nr of items 3, Sum 65", register.getReceipt());
+	}
 	
 }
