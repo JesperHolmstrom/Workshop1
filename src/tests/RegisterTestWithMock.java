@@ -20,5 +20,13 @@ public class RegisterTestWithMock {
 		assertEquals(0, register.getSum());
 	}
 	
+	@Test
+	public void shouldAddPriceToSum() {
+		Register register = new Register();
+		Item milk = Mockito.mock(Item.class);
+		register.addItem(milk);
+		assertEquals(30, register.getSum());
+	}
+	
 	
 }
